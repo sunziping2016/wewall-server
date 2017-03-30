@@ -1,0 +1,11 @@
+{
+  "wechat": {
+    "token": "",
+    "appid": "",
+    "encodingAESKey": ""
+  },
+  "wechat-account": {
+    "account": "",
+    "password": ""
+  }
+}

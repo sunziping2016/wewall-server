@@ -1,0 +1,21 @@
+{
+  "name": "we-wall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "morgan": "^1.8.1",
+    "phantom": "^4.0.1",
+    "phantomjs": "^2.1.7",
+    "request": "^2.81.0",
+    "wechat": "^2.1.0",
+    "winston": "^2.3.1"
+  }
+}
