@@ -6,8 +6,8 @@ const winston = require('winston').loggers.add('wxhack', {
     }
 });
 
-const wxhack = require('../msgserver/wxhack');
-const browser = new wxhack(require('../config/config.json')['wechat-account']);
+const wxhack = require('../wxmsg/wxhack');
+const browser = new wxhack(require('../config/config.json').wxmsg.login);
 const fs = require('fs');
 const path = require('path');
 

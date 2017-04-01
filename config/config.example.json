@@ -5,7 +5,7 @@
     "encodingAESKey": ""
   },
   "wechat-account": {
-    "account": "",
+    "username": "",
     "password": ""
   }
 }

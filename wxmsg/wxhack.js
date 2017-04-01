@@ -16,7 +16,7 @@ let timeout= (ms) => new Promise(resolve => setTimeout(resolve, ms));
 module.exports = class {
     constructor(options) {
         options = options || {};
-        this.account = options.account;
+        this.username = options.username;
         this.password = options.password;
         this.user_agent = options.user_agent || 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36';
         this.polling_interval = options.polling_interval || 50;
@@ -75,11 +75,11 @@ module.exports = class {
             return !!document.getElementById('logout');
         })) {
             await this.page.open('https://mp.weixin.qq.com/');
-            await this.page.evaluate(function (account, password) {
-                document.getElementById('account').value = account;
+            await this.page.evaluate(function (username, password) {
+                document.getElementById('username').value = username;
                 document.getElementById('pwd').value = password;
                 document.getElementById('loginBt').click();
-            }, this.account, this.password);
+            }, this.username, this.password);
             let verify_img = null, qr_code = null, error_tips = null, old_error_tips = null;
             while (true) {
                 [verify_img, qr_code, error_tips] = await this.page.evaluate(function() {
