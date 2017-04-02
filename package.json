@@ -1,13 +1,10 @@
 {
-  "name": "we-wall",
+  "name": "wewall",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
     "mongodb": "^2.2.25",
