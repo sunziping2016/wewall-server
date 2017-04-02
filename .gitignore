@@ -1,6 +1,5 @@
 .idea
 *.iml
 node_modules
-config/config.json
+config.json
 test/out
-dist/

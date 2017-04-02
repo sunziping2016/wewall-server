@@ -6,11 +6,10 @@ const winston = require('winston').loggers.add('wxhack', {
     }
 });
 
-const wxhack = require('../wxmsg/wxhack');
-const browser = new wxhack(require('../config/config.json').wxmsg.login);
+const wxhack = require('../lib/crawler/wxhack');
+const browser = new wxhack(require('../config.json').crawler);
 const fs = require('fs');
 const path = require('path');
-
 
 let timeout= (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
