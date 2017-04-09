@@ -6,12 +6,15 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "express": "^4.15.2",
     "mongodb": "^2.2.25",
     "morgan": "^1.8.1",
     "phantom": "^4.0.1",
     "phantomjs": "^2.1.7",
     "request": "^2.81.0",
+    "socket.io": "^1.7.3",
+    "uuid": "^3.0.1",
     "wechat": "^2.1.0",
     "winston": "^2.3.1"
   }
