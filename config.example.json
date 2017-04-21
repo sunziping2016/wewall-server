@@ -1,24 +1,72 @@
 {
   "port": 15838,
-  "dburl": "mongodb://localhost/wewall",
+  "dburl": "mongodb://localhost/mywewall",
 
-  "wxmsg": {
-    "token": "YOUR TOKEN",
-    "appid": "wewall",
-    "encodingAESKey": "YOUR KEY",
-
-    "handlers": {}
+  "handlers": {
+    "wechat": {
+      "token": "YOUR TOKEN",
+      "appid": "wewall",
+      "encodingAESKey": "YOUR KEY"
+    },
+    "update_wall": {
+      "match": true,
+      "message": "恭喜您，留言成功！审核成功后即可上墙。"
+    }
   },
 
   "crawler": {
     "username": "YOUR USERNAME",
     "password": "YOUR PASSWORD",
-
     "media_dir": "/path/to/where/images/are/put",
 
     "polling": true,
     "polling_interval": 5000,
     "fetching_timeout": 10000,
     "reset_on_error": true
+  },
+
+  "authdb": {
+    "default_users": {
+      "guest" : {
+        "nickname": "游客"
+      },
+      "wall" : {
+        "nickname": "微信墙",
+        "push": ["message accepted with user"]
+      },
+      "danmu" : {
+        "nickname": "弹幕",
+        "push": ["message accepted"]
+      },
+      "wall-test" : {
+        "nickname": "微信墙（测试）",
+        "push": ["message raw with user"]
+      },
+      "danmu-test" : {
+        "nickname": "弹幕（测试）",
+        "push": ["message raw"]
+      },
+      "bonus" : {
+        "nickname": "抽奖",
+        "permissions": ["query user"]
+      },
+
+      "admin" : {
+        "nickname": "管理员",
+        "password": "admin",
+        "push": [
+          "message raw", "message accepted", "message rejected",
+          "user raw", "user detailed", "connection"
+        ],
+        "permissions": [
+          "message accept", "message reject", "message send",
+          "query message", "query user", "connection kick"
+        ]
+      }
+    }
+  },
+
+  "socket": {
+    "images_path": "../assets/images"
   }
 }
